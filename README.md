@@ -43,7 +43,7 @@ Hardware: 2x GTX 1080Ti or 2x Tesla V100
 
 ![Architecture][arch]
 
-[arch]: ./assets/arch.png
+[arch]: ./assets/arch.jpg
 
 #### Hyper-parameters
 
