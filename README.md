@@ -1,7 +1,7 @@
 # fashion-image-inpainting
 A Benchmark for Inpainting of Clothing Images with Irregular Holes
 
-*Submitted to the European Conference on Computer Vision, ECCV 2020, Advances in Image Manipulation workshop and challenges on image and video manipulation [AIM2020](https://data.vision.ee.ethz.ch/cvl/aim20/)*
+*Accepted to the European Conference on Computer Vision, ECCV 2020, Advances in Image Manipulation workshop and challenges on image and video manipulation [AIM2020](https://data.vision.ee.ethz.ch/cvl/aim20/)*
 
 ![Masked & Generated Images][fig1]
 
@@ -13,11 +13,11 @@ Framework: PyTorch
 
 Datasets: [FashionGen](https://fashion-gen.com), [FashionAI](https://tianchi.aliyun.com/markets/tianchi/FashionAI), [DeepFashion](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html), [DeepFashion2](https://github.com/switchablenorms/DeepFashion2)
 
-Masks: [qd_imd](https://github.com/karfly/qd-imd)
+Masks: [qd-imd](https://github.com/karfly/qd-imd)
 
 Base code: [birdortyedi](https://github.com/birdortyedi/description-aware-fashion-inpainting)
 
-Hardware: 2x GTX 1080Ti / 2x Tesla V100
+Hardware: 2x GTX 1080Ti or 2x Tesla V100
 
 ``` git clone https://github.com/birdortyedi/fashion-image-inpainting.git```
 

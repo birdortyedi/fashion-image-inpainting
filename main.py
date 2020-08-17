@@ -22,7 +22,7 @@ NUM_EPOCHS = 21
 BATCH_SIZE = 16
 DATASET = "DeepFashion2"
 DATA_FOLDER = os.path.join("./data", DATASET)
-MODE = "train"
+MODE = "ablation"
 MASK_FORM = "free"  # "free"
 MULTI_GPU = True
 DEVICE_ID = 1
@@ -94,7 +94,8 @@ else:
 d_net = d_net.to(device)
 refine_net = refine_net.to(device)
 
-refine_net.apply(weights_init)
+if MODE == "train":
+    refine_net.apply(weights_init)
 
 d_loss_fn = nn.BCELoss()
 d_loss_fn = d_loss_fn.to(device)
@@ -198,7 +199,7 @@ def ablation(path):
     with torch.no_grad():
         imgs, masks, idxs = list(), list(), list()
         for i, fname in enumerate(os.listdir(os.path.join(path, "img"))):
-            if os.path.isfile(os.path.join(path, "masked", "mask_" + fname)) and "comparison" in fname:
+            if os.path.isfile(os.path.join(path, "masked", "mask_" + fname)):
                 idxs.append(i)
                 imgs.append(normalizer(tensorizer(resizer(Image.open(os.path.join(path, "img", fname))))))
                 m = tensorizer(resizer(Image.open(os.path.join(path, "masked", "mask_" + fname))))
@@ -239,7 +240,7 @@ if __name__ == '__main__':
             torch.save(refine_net.state_dict(), "./weights_{}_{}/weights_net_epoch_{}.pth".format(DATASET, MASK_FORM, e))
         writer.close()
     else:
-        PATH = "./weights_{}_{}/weights_net_epoch_{}.pth".format(DATASET, MASK_FORM, NUM_EPOCHS)
+        PATH = "./weights/weights_{}_{}/weights_net_epoch_{}.pth".format(DATASET, MASK_FORM, NUM_EPOCHS)
         refine_net.load_state_dict(torch.load(PATH))
         ABLATION_DATA_PATH = "./data/ablation"
         ablation(ABLATION_DATA_PATH)

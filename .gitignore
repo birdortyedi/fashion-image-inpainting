@@ -76,3 +76,4 @@ runs/
 .git/
 data/
 /data/
+weights/
