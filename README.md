@@ -67,12 +67,8 @@ Hardware: 2x GTX 1080Ti or 2x Tesla V100
 | Resizing               | 256           |
 
 ## Weights
-![DF2][df2]
-
-![FG][fg]
-
-[df2]: (https://www.dropbox.com/s/xcbxlam2934e8uz/weights_net_df2.pth?dl=0)
-[FG]: (https://www.dropbox.com/s/cdddj866i7g8cuc/weights_net_fg.pth?dl=0)
+[DF2](https://www.dropbox.com/s/xcbxlam2934e8uz/weights_net_df2.pth?dl=0) 
+[FG](https://www.dropbox.com/s/cdddj866i7g8cuc/weights_net_fg.pth?dl=0)
 
 ## Results
 
